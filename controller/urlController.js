@@ -19,7 +19,7 @@ module.exports.UrlAdd = async (req, res) => {
     const user = await User.findById(decodedToken.userId)
     const ShortId = shortid.generate();
 
-    const shorturl = `http://localhost:3001/shorturl/` + ShortId;
+    const shorturl = `https://url-short-be.onrender.com//shorturl/` + ShortId;
 
     const newUrl = new Url({
       title,
