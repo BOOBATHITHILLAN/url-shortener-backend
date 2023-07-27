@@ -13,7 +13,7 @@ module.exports.getUser = async (req, res) => {
 
 module.exports.getUserRestrictData = async (req, res) => {
     const user = await User.find({}, 'name email account_activated');
-    res.send(user);
+    res.send("<h1>Welcome To URL SHORTENER Application</h1>");
 }
 
 module.exports.Signup = async (req, res) => {
@@ -45,7 +45,7 @@ module.exports.Signup = async (req, res) => {
             Math.random().toString(36).substring(2, 15) +
             Math.random().toString(36).substring(2, 15);
 
-        const link = `http://localhost:5173/UrlShortener/account_activation/${randomString}`;
+        const link = `https://gregarious-narwhal-772a00.netlify.app/UrlShortener/account_activation/${randomString}`;
 
         const sub = "Account Activation"
 
@@ -133,7 +133,7 @@ module.exports.PasswordResetLink = async (req, res) => {
         await User.findByIdAndUpdate(matchedUser.id, matchedUser);
 
         //sending email for resetting
-        const link = `http://localhost:5173/UrlShortener/UpdatePassword/${randomString}`;
+        const link = `https://gregarious-narwhal-772a00.netlify.app/UrlShortener/UpdatePassword/${randomString}`;
 
         const sub = "Reset password"
 
