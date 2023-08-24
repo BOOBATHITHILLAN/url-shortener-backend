@@ -16,7 +16,7 @@ const userSchema=new mongoose.Schema({
     },
     account_activated:{
         type:Boolean,
-        default:false
+        default:true
     },
     token_activate_account:{
         type:String
