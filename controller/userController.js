@@ -107,7 +107,10 @@ module.exports.Signin = async (req, res) => {
         // generate and send the JWT token
         const token = jwt.sign({ userId: user._id }, Secret_Key, { expiresIn: '2h' });
         return res.status(201).json({ token: token })
+    }else{
+        return res.status(400).json({ message: 'Account not activated' });
     }
+
 }
 
 module.exports.PasswordResetLink = async (req, res) => {
